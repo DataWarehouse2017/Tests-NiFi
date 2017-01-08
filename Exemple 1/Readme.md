@@ -24,7 +24,7 @@ Ces données peuvent être présentes sous différents formats (JSON, CSV,etc...
 
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/processeur%20icone.PNG)
 
-Faites glisser l'icône ci-dessus sur la partie quadrillée de l'interface pour selectionner un processeur. Dans la partie recherche, tapez "http" puis sélectionnez le processeur "GetHttp". Faites un clic droit, et cliquez sur "properties". La fenêtre suivante devrait apparaître :
+Faites glisser l'icône ci-dessus sur la partie quadrillée de l'interface pour selectionner un processeur. Dans la partie recherche, tapez "http" puis sélectionnez le processeur "GetHttp". Faites un clic droit, et cliquez sur "Configure". Sélectionnez l'onglet "properties". La fenêtre suivante devrait apparaître :
 
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/propri%C3%A9t%C3%A9s%20getHttp.JPG)
 
@@ -61,15 +61,48 @@ Vous pouvez alors modifier les propriétés du "Context SSL service" selon ce qu
 
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/props%20ssl%202.JPG)
 
-- 
+- Truststore Filename: Le fichier "cacerts" situé dans le répertoire de vore jdk 
+(C:\Program Files\Java\jdk{numéro_version}\jre\lib\security\cacerts)
+- Truststore Type: JKS
+- Truststore Password: le mot de passe par défaut est "changeit"
+
+Après avoir validé les changements, votre devez revenir au menu des connexions : 
+
+![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/activer%20connexion%20ssl.JPG)
+
+Cliquer alors sur le petit "éclair" à droite afin d'activer la connexion. La fenêtre suivante devrait apparaître :
+
+![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/enable%20controller.JPG)
+
+Sélectionnez "service dans referencing components". Puis cliquez sur "Enable". Si tout se passe bien, toutes les étapes de tests de la connexion devraient être réussis comme indiqué sur l'image ci-dessous :
+
+![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/all%20checked.JPG)
 
 ### Configuration du processeur PutFile
 
+De même, ajouter le processeur PutFile (qui va nous permettre d'ajouter le fichier JSON dans notre système en local) au flow puis allez dans les propriétés du processeurs :
+
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/putfile%20processor%20settings.JPG)
+
+Cocher la case failure et success pour les relations propre à ce processeur (ces relations sont des relations de terminaisons : on déclare ainsi que ce processeur est un état final du flow).
+
+Enfin, configurez les propriétés comme ce qui suit :
 
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/putFile%20properties.JPG)
 
+- directory : écriture du fichier json dans ce répertoire (en local)
+- Conflict Resolution Strategy : Sélectionnez "replace". Ce choix peut s'expliquer de la manière suivante : on va laisser le processeur GetHttp s'exécuter pendant une journée par exemple, requêtant l'API pour obtenir les données de Facebook toutes les minutes (à configurer dans les propriétés de GetHttp) :
+
+![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/gethttp%20scheduling.PNG)
+
+Cela permettra d'écraser l'ancien fichier pour le mettre à jour avec le nouveau.
+
+
 ### Résultat
 
+![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/fichier%20json.PNG)
+
+Allez sur le site suivant si vous souhaitez afficher de façon formattée les données JSON (afin de pouvoir lire plus aisément le fichier) : 
+https://jsonformatter.curiousconcept.com/
 
 
