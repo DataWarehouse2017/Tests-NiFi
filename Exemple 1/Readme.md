@@ -43,7 +43,7 @@ En passant, la souris dessus, on se rend compte, qu'il faut sélectionner un "SS
 
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/propri%C3%A9t%C3%A9s%20getHttp.JPG)
 
-Cliquez sur la case "Value" de SSL context service. Le menu déroulant suivant (sans "connexion https") devraît apparaître :
+Cliquer sur la case "Value" de SSL context service. Le menu déroulant suivant (sans "connexion https") devraît apparaître :
 
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/create%20new%20service.JPG)
 
@@ -66,7 +66,7 @@ Vous pouvez alors modifier les propriétés du "Context SSL service" selon ce qu
 - Truststore Type: JKS
 - Truststore Password: le mot de passe par défaut est "changeit"
 
-Après avoir validé les changements, votre devez revenir au menu des connexions : 
+Après avoir validé les changements, vous devez revenir au menu des connexions : 
 
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/activer%20connexion%20ssl.JPG)
 
@@ -97,6 +97,17 @@ Enfin, configurez les propriétés comme ce qui suit :
 
 Cela permettra d'écraser l'ancien fichier pour le mettre à jour avec le nouveau.
 
+### Connecter les deux processeurs :
+
+Pour connecter les deux processeurs, placez votre souris au centre du processeur GetHttp. L'icône suivante apparaît alors au centre du processeur :
+
+![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/connexion%20proceseur%20gethttp.PNG)
+
+Cliquez puis faites glisser la souris vers le processeur PutFile. La fenêtre de création de connexion s'affiche alors :
+
+![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%201/Images/Create%20connection.PNG)
+
+La relation "success" veut dire que dans le cas où le processeur GetHttp obtient le fichier, ce fichier va alors passer du premier processeur au processeur auquel la connexion est rattachée (le processeur PutFile ici). Cliquez sur "add". la connexion entre les deux processeurs est crée
 
 ### Résultat
 
