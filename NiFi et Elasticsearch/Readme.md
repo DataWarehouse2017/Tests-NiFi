@@ -12,10 +12,7 @@
 ATTENTION : la version 5.1.1 (récente) d'Elasticsearch ne marche pas avec le processeur PutElasticsearch de NiFi
 
 ## But de l'exemple :
-- Récupérer et trier les tweets en fonction des candidats à la présidentielle mentionnés dans le message
-- Utiliser les fonctionnalités de certains processeurs sur NiFi
-- Découvrir le langage d'expression de NiFi
-- Appronfondir l'Exemple 1
+- Découvrir comment imbriquer NiFi avec Elasticsearch de manière très simple
 
 ## Processeurs utilisés et remarques :
 - GetTwitter, EvaluateJSONPath, RouteOnAttribute, UpdateAttribute, PutFile, AttributesToJSON, LogAttribute
@@ -45,7 +42,6 @@ On rajoute la propriété "tweet" (bouton "+" ) vérifiant que le tweet reçu co
 ### Configuration du processeur PutElasticsearch
 
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/NiFi%20et%20Elasticsearch/screenshotsElasticsearch/ConfigurePutElasticSearch.PNG)
-
 - index : index sur dans lequel les documents seront stockés. S'il n'existe pas, Elasticsearch le crée.
 - Identifier Attribute : identifiant du document. Il est unique. On choisit donc uuid qui est l'identifiant unique d'une unité de fichier (ici sous format JSON) dans NiFi
 - ATTENTION : il faut remplacer le port 9200 par le port 9300 pour renseigner l'hôte d'Elasticsearch comme spécifié sur les propriétés ci-dessus.
