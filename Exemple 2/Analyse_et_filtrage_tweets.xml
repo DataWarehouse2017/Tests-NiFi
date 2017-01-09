@@ -1,0 +1,905 @@
+<?xml version="1.0" ?>
+<template encoding-version="1.0">
+  <description>R�cup�re les tweets mentionnant 4 candidats � la pr�sidentielle et les trie selon ces candidats</description>
+  <groupId>478c770b-0159-1000-89b3-29bcbb29af7f</groupId>
+  <name>Analyse et filtrage tweets</name>
+  <snippet>
+    <processGroups>
+      <id>01591022-8511-18d6-0000-000000000000</id>
+      <parentGroupId>478c770b-0159-1000-0000-000000000000</parentGroupId>
+      <position>
+        <x>0.0</x>
+        <y>0.0</y>
+      </position>
+      <comments></comments>
+      <contents>
+        <connections>
+          <id>0159104c-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591046-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>matched</selectedRelationships>
+          <source>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591045-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>0159104d-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <bends>
+            <x>1503.060491029104</x>
+            <y>-356.0439664586638</y>
+          </bends>
+          <bends>
+            <x>1503.060491029104</x>
+            <y>-306.0439664586638</y>
+          </bends>
+          <destination>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591045-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <selectedRelationships>unmatched</selectedRelationships>
+          <source>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591045-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>0159104e-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591048-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>tweet</selectedRelationships>
+          <source>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591046-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>0159104f-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591049-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591048-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>01591050-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591047-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591048-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>01591051-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>0159104a-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>failure</selectedRelationships>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591047-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <connections>
+          <id>01591052-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+          <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+          <destination>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>01591045-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </destination>
+          <flowFileExpiration>0 sec</flowFileExpiration>
+          <labelIndex>1</labelIndex>
+          <name></name>
+          <selectedRelationships>success</selectedRelationships>
+          <source>
+            <groupId>01591022-8511-18d6-0000-000000000000</groupId>
+            <id>0159104b-8511-18d6-0000-000000000000</id>
+            <type>PROCESSOR</type>
+          </source>
+          <zIndex>0</zIndex>
+        </connections>
+        <processors>
+          <id>01591045-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <position>
+            <x>1048.060491029104</x>
+            <y>-396.0439664586638</y>
+          </position>
+          <config>
+            <bulletinLevel>ERROR</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>4</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Destination</key>
+                <value>
+                  <name>Destination</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Return Type</key>
+                <value>
+                  <name>Return Type</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Path Not Found Behavior</key>
+                <value>
+                  <name>Path Not Found Behavior</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Null Value Representation</key>
+                <value>
+                  <name>Null Value Representation</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.handle</key>
+                <value>
+                  <name>twitter.handle</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.hashtags</key>
+                <value>
+                  <name>twitter.hashtags</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.language</key>
+                <value>
+                  <name>twitter.language</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.location</key>
+                <value>
+                  <name>twitter.location</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.msg</key>
+                <value>
+                  <name>twitter.msg</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.time</key>
+                <value>
+                  <name>twitter.time</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.time_zone</key>
+                <value>
+                  <name>twitter.time_zone</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.tweet_id</key>
+                <value>
+                  <name>twitter.tweet_id</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.unixtime</key>
+                <value>
+                  <name>twitter.unixtime</name>
+                </value>
+              </entry>
+              <entry>
+                <key>twitter.user</key>
+                <value>
+                  <name>twitter.user</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Destination</key>
+                <value>flowfile-attribute</value>
+              </entry>
+              <entry>
+                <key>Return Type</key>
+                <value>auto-detect</value>
+              </entry>
+              <entry>
+                <key>Path Not Found Behavior</key>
+                <value>ignore</value>
+              </entry>
+              <entry>
+                <key>Null Value Representation</key>
+                <value>empty string</value>
+              </entry>
+              <entry>
+                <key>twitter.handle</key>
+                <value>$.user.screen_name</value>
+              </entry>
+              <entry>
+                <key>twitter.hashtags</key>
+                <value>$.entities.hashtags[0].text</value>
+              </entry>
+              <entry>
+                <key>twitter.language</key>
+                <value>$.lang</value>
+              </entry>
+              <entry>
+                <key>twitter.location</key>
+                <value>$.user.location</value>
+              </entry>
+              <entry>
+                <key>twitter.msg</key>
+                <value>$.text</value>
+              </entry>
+              <entry>
+                <key>twitter.time</key>
+                <value>$.created_at</value>
+              </entry>
+              <entry>
+                <key>twitter.time_zone</key>
+                <value>$.user.time_zone</value>
+              </entry>
+              <entry>
+                <key>twitter.tweet_id</key>
+                <value>$.id</value>
+              </entry>
+              <entry>
+                <key>twitter.unixtime</key>
+                <value>$.timestamp_ms</value>
+              </entry>
+              <entry>
+                <key>twitter.user</key>
+                <value>$.user.name</value>
+              </entry>
+            </properties>
+            <runDurationMillis>25</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>Pull Key Attributes</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>matched</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>unmatched</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
+        </processors>
+        <processors>
+          <id>01591046-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <position>
+            <x>1053.625401917776</x>
+            <y>-137.60860360465995</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>2</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Routing Strategy</key>
+                <value>
+                  <name>Routing Strategy</name>
+                </value>
+              </entry>
+              <entry>
+                <key>tweet</key>
+                <value>
+                  <name>tweet</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Routing Strategy</key>
+                <value>Route to Property name</value>
+              </entry>
+              <entry>
+                <key>tweet</key>
+                <value>${twitter.msg:isEmpty():not()}</value>
+              </entry>
+            </properties>
+            <runDurationMillis>25</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>Find only Tweets</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>tweet</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>unmatched</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.standard.RouteOnAttribute</type>
+        </processors>
+        <processors>
+          <id>01591047-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <position>
+            <x>742.0187512537182</x>
+            <y>129.55060028752632</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Attributes List</key>
+                <value>
+                  <name>Attributes List</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Destination</key>
+                <value>
+                  <name>Destination</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Include Core Attributes</key>
+                <value>
+                  <name>Include Core Attributes</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Null Value</key>
+                <value>
+                  <name>Null Value</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Attributes List</key>
+                <value>twitter.user, candidate, twitter.language, twitter.location, twitter.time, twitter.msg</value>
+              </entry>
+              <entry>
+                <key>Destination</key>
+                <value>flowfile-content</value>
+              </entry>
+              <entry>
+                <key>Include Core Attributes</key>
+                <value>true</value>
+              </entry>
+              <entry>
+                <key>Null Value</key>
+                <value>false</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>Generate new JSON tweet</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.standard.AttributesToJSON</type>
+        </processors>
+        <processors>
+          <id>01591048-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <position>
+            <x>290.4143207926825</x>
+            <y>-142.8024832926152</y>
+          </position>
+          <config>
+            <annotationData>&lt;criteria&gt;
+    &lt;flowFilePolicy&gt;USE_CLONE&lt;/flowFilePolicy&gt;
+    &lt;rules&gt;
+        &lt;actions&gt;
+            &lt;attribute&gt;candidate&lt;/attribute&gt;
+            &lt;id&gt;1790bcf5-b8b2-49d9-9db8-10d63eb562d7&lt;/id&gt;
+            &lt;value&gt;Macron&lt;/value&gt;
+        &lt;/actions&gt;
+        &lt;conditions&gt;
+            &lt;expression&gt;${twitter.msg:toLower():contains("macron")}&lt;/expression&gt;
+            &lt;id&gt;e835b82c-4fc8-4387-8794-c3f77b6a98e8&lt;/id&gt;
+        &lt;/conditions&gt;
+        &lt;id&gt;7065b9a0-c2c5-478f-9e85-99f081fe3793&lt;/id&gt;
+        &lt;name&gt;tweetMacron&lt;/name&gt;
+    &lt;/rules&gt;
+    &lt;rules&gt;
+        &lt;actions&gt;
+            &lt;attribute&gt;candidate&lt;/attribute&gt;
+            &lt;id&gt;2959087b-c92d-4cbc-9772-adec8b5f5ef6&lt;/id&gt;
+            &lt;value&gt;Melenchon&lt;/value&gt;
+        &lt;/actions&gt;
+        &lt;conditions&gt;
+            &lt;expression&gt;${twitter.msg:toLower():contains("melenchon")}&lt;/expression&gt;
+            &lt;id&gt;31d6cae4-3b1a-45c4-9e00-dc9d0bc36d38&lt;/id&gt;
+        &lt;/conditions&gt;
+        &lt;id&gt;74c647c9-0531-421e-ad71-05efcfc5dfc2&lt;/id&gt;
+        &lt;name&gt;tweetMelenchon&lt;/name&gt;
+    &lt;/rules&gt;
+    &lt;rules&gt;
+        &lt;actions&gt;
+            &lt;attribute&gt;candidate&lt;/attribute&gt;
+            &lt;id&gt;68b017df-021d-4a4e-a71c-252531a45d7e&lt;/id&gt;
+            &lt;value&gt;LePen&lt;/value&gt;
+        &lt;/actions&gt;
+        &lt;conditions&gt;
+            &lt;expression&gt;${twitter.msg:toLower():contains("mlp")}&lt;/expression&gt;
+            &lt;id&gt;59262046-a48e-4457-a55c-9130955f5e73&lt;/id&gt;
+        &lt;/conditions&gt;
+        &lt;id&gt;6903eb01-fe02-4d26-8eaa-749bbc203bec&lt;/id&gt;
+        &lt;name&gt;tweetLePen&lt;/name&gt;
+    &lt;/rules&gt;
+    &lt;rules&gt;
+        &lt;actions&gt;
+            &lt;attribute&gt;candidate&lt;/attribute&gt;
+            &lt;id&gt;c7d723ed-0d0c-48e5-b54a-f5358eeb9a71&lt;/id&gt;
+            &lt;value&gt;Fillon&lt;/value&gt;
+        &lt;/actions&gt;
+        &lt;conditions&gt;
+            &lt;expression&gt;${twitter.msg:toLower():contains("fillon")}&lt;/expression&gt;
+            &lt;id&gt;102bf02f-0fed-4024-b1c6-afb6e2a4b726&lt;/id&gt;
+        &lt;/conditions&gt;
+        &lt;id&gt;5f5515a9-5af8-471e-ac8f-c579f2d00bfb&lt;/id&gt;
+        &lt;name&gt;tweetFillon&lt;/name&gt;
+    &lt;/rules&gt;
+&lt;/criteria&gt;</annotationData>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Delete Attributes Expression</key>
+                <value>
+                  <name>Delete Attributes Expression</name>
+                </value>
+              </entry>
+              <entry>
+                <key>candidate</key>
+                <value>
+                  <name>candidate</name>
+                </value>
+              </entry>
+              <entry>
+                <key>filename</key>
+                <value>
+                  <name>filename</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Delete Attributes Expression</key>
+              </entry>
+              <entry>
+                <key>candidate</key>
+                <value>unknown</value>
+              </entry>
+              <entry>
+                <key>filename</key>
+                <value>${twitter.handle}_${twitter.tweet_id:toString()}.json</value>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>UpdateAttribute</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.attributes.UpdateAttribute</type>
+        </processors>
+        <processors>
+          <id>01591049-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <position>
+            <x>283.62212331708133</x>
+            <y>126.9153128957505</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Directory</key>
+                <value>
+                  <name>Directory</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Conflict Resolution Strategy</key>
+                <value>
+                  <name>Conflict Resolution Strategy</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Create Missing Directories</key>
+                <value>
+                  <name>Create Missing Directories</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Maximum File Count</key>
+                <value>
+                  <name>Maximum File Count</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Last Modified Time</key>
+                <value>
+                  <name>Last Modified Time</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Permissions</key>
+                <value>
+                  <name>Permissions</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Owner</key>
+                <value>
+                  <name>Owner</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Group</key>
+                <value>
+                  <name>Group</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Directory</key>
+                <value>"YourPathDirectory"\${candidate}</value>
+              </entry>
+              <entry>
+                <key>Conflict Resolution Strategy</key>
+                <value>fail</value>
+              </entry>
+              <entry>
+                <key>Create Missing Directories</key>
+                <value>true</value>
+              </entry>
+              <entry>
+                <key>Maximum File Count</key>
+              </entry>
+              <entry>
+                <key>Last Modified Time</key>
+              </entry>
+              <entry>
+                <key>Permissions</key>
+              </entry>
+              <entry>
+                <key>Owner</key>
+              </entry>
+              <entry>
+                <key>Group</key>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>Put file in the candidate directory</name>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>failure</name>
+          </relationships>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.standard.PutFile</type>
+        </processors>
+        <processors>
+          <id>0159104a-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <position>
+            <x>1330.246839943693</x>
+            <y>128.68162737981947</y>
+          </position>
+          <config>
+            <bulletinLevel>INFO</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Log Level</key>
+                <value>
+                  <name>Log Level</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Log Payload</key>
+                <value>
+                  <name>Log Payload</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Attributes to Log</key>
+                <value>
+                  <name>Attributes to Log</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Attributes to Ignore</key>
+                <value>
+                  <name>Attributes to Ignore</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Log prefix</key>
+                <value>
+                  <name>Log prefix</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Log Level</key>
+                <value>info</value>
+              </entry>
+              <entry>
+                <key>Log Payload</key>
+                <value>false</value>
+              </entry>
+              <entry>
+                <key>Attributes to Log</key>
+                <value>candidate, filename</value>
+              </entry>
+              <entry>
+                <key>Attributes to Ignore</key>
+              </entry>
+              <entry>
+                <key>Log prefix</key>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>Log Filename and candidate</name>
+          <relationships>
+            <autoTerminate>true</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.standard.LogAttribute</type>
+        </processors>
+        <processors>
+          <id>0159104b-8511-18d6-0000-000000000000</id>
+          <parentGroupId>01591022-8511-18d6-0000-000000000000</parentGroupId>
+          <position>
+            <x>279.45140702649485</x>
+            <y>-392.6599324567602</y>
+          </position>
+          <config>
+            <bulletinLevel>WARN</bulletinLevel>
+            <comments></comments>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <descriptors>
+              <entry>
+                <key>Twitter Endpoint</key>
+                <value>
+                  <name>Twitter Endpoint</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Consumer Key</key>
+                <value>
+                  <name>Consumer Key</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Consumer Secret</key>
+                <value>
+                  <name>Consumer Secret</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Access Token</key>
+                <value>
+                  <name>Access Token</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Access Token Secret</key>
+                <value>
+                  <name>Access Token Secret</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Languages</key>
+                <value>
+                  <name>Languages</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Terms to Filter On</key>
+                <value>
+                  <name>Terms to Filter On</name>
+                </value>
+              </entry>
+              <entry>
+                <key>IDs to Follow</key>
+                <value>
+                  <name>IDs to Follow</name>
+                </value>
+              </entry>
+              <entry>
+                <key>Locations to Filter On</key>
+                <value>
+                  <name>Locations to Filter On</name>
+                </value>
+              </entry>
+            </descriptors>
+            <executionNode>ALL</executionNode>
+            <lossTolerant>false</lossTolerant>
+            <penaltyDuration>30 sec</penaltyDuration>
+            <properties>
+              <entry>
+                <key>Twitter Endpoint</key>
+                <value>Filter Endpoint</value>
+              </entry>
+              <entry>
+                <key>Consumer Key</key>
+              </entry>
+              <entry>
+                <key>Consumer Secret</key>
+              </entry>
+              <entry>
+                <key>Access Token</key>
+              </entry>
+              <entry>
+                <key>Access Token Secret</key>
+              </entry>
+              <entry>
+                <key>Languages</key>
+              </entry>
+              <entry>
+                <key>Terms to Filter On</key>
+                <value>@EmmanuelMacron, @FrancoisFillon, @JLMelenchon, @MLP_officiel</value>
+              </entry>
+              <entry>
+                <key>IDs to Follow</key>
+              </entry>
+              <entry>
+                <key>Locations to Filter On</key>
+              </entry>
+            </properties>
+            <runDurationMillis>0</runDurationMillis>
+            <schedulingPeriod>0 sec</schedulingPeriod>
+            <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+            <yieldDuration>1 sec</yieldDuration>
+          </config>
+          <name>Get tweets about candidates</name>
+          <relationships>
+            <autoTerminate>false</autoTerminate>
+            <name>success</name>
+          </relationships>
+          <style></style>
+          <type>org.apache.nifi.processors.twitter.GetTwitter</type>
+        </processors>
+      </contents>
+      <name>Analyse et filtrage tweets</name>
+    </processGroups>
+  </snippet>
+  <timestamp>01/09/2017 01:24:29 CET</timestamp>
+</template>
