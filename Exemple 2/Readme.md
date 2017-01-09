@@ -1,6 +1,7 @@
 Cas d'usage n° 2 : Analyse de tweets
 ================
 
+Pour tester, vous pouvez télécharger le template et l'importer sur NiFi (Analyse_et_filtrage_tweets.xml)
 
 ## Prérequis :
 - Disposer d'un compte twitter et créer une application twitter sur https://apps.twitter.com/
@@ -90,7 +91,5 @@ On choisit d'afficher les attributs "candidate" et "Filename" afin de vérifier 
 ![alt tag](https://github.com/DataWarehouse2017/Tests-NiFi/blob/master/Exemple%202/screenshots2/resultat.PNG)
 
 On obtient bien plusieurs tweets mentionnant chaque candidat à la présidentielle.
-
-Pour tester, vous pouvez télécharger le template et l'importer sur NiFi (Analyse_et_filtrage_tweets.xml)
 
 
