@@ -91,5 +91,6 @@ On choisit d'afficher les attributs "candidate" et "Filename" afin de vérifier 
 
 On obtient bien plusieurs tweets mentionnant chaque candidat à la présidentielle.
 
+Pour tester, vous pouvez télécharger le template et l'importer sur NiFi (Analyse_et_filtrage_tweets.xml)
 
 
